@@ -71,3 +71,15 @@ with tab2:
 
 st.divider()
 st.markdown("Developed by **Marka-Sentry Legal-Tech Team**")
+# تحديث قائمة الفئات لتشمل نطاقاً أوسع من قطاع السيارات والأدوية
+categories_expansion = {
+    "Healthcare": ["5", "10", "44"], 
+    "Automotive": ["7", "12", "37"],
+    "FMCG": ["29", "30", "32"]
+}
+
+# إضافة وظيفة للبحث في "الفئات المرتبطة"
+def check_related_classes(main_class):
+    if main_class == "5": # قطاع الأدوية
+        return ["3", "10", "35"] # البحث أيضاً في التجميل والأجهزة والإدارة
+    return [main_class]
