@@ -95,3 +95,59 @@ if uploaded_file is not None:
         # ربط النتيجة بالتقرير القانوني
         if st.button("توليد تقرير تحليل بصري (PDF)"):
              st.write("جاري إعداد التقرير بناءً على معايير 'التضليل البصري' في القانون الجزائري...")
+            import streamlit as st
+from fuzzywuzzy import fuzz
+from fpdf import FPDF
+import pandas as pd
+
+# إعدادات الواجهة المتجاوبة للهاتف
+st.set_page_config(page_title="Marka-Sentry DZ", layout="centered")
+
+# CSS مخصص لجعل الأزرار كبيرة وسهلة الضغط على الهاتف
+st.markdown("""
+    <style>
+    .stButton>button {
+        width: 100%;
+        height: 3em;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title("🛡️ Marka-Sentry Algeria")
+
+# بيانات النشرة رقم 432 (ديسمبر 2025)
+bopi_data = [
+    {"ID": "139321", "Brand": "MASILECT", "Owner": "MICRO LABS LIMITED (India)", "Class": "5"}, #
+    {"ID": "139331", "Brand": "Go Play Market", "Owner": "Ooredoo IP LLC (Qatar)", "Class": "9"}, #
+    {"ID": "139335", "Brand": "See Brilliantly", "Owner": "ALCON INC (Switzerland)", "Class": "5, 9, 10"}, #
+    {"ID": "139326", "Brand": "Titta", "Owner": "SARL GROUPE LYDIA SERVICE", "Class": "30"} #
+]
+
+# خيارات التطبيق
+tab1, tab2 = st.tabs(["🔍 بحث نصي", "📸 مسح ميداني"])
+
+with tab1:
+    target = st.text_input("أدخل اسم العلامة الأصلية لحمايتها:", placeholder="مثال: MICRO LABS")
+    if target:
+        found = False
+        for item in bopi_data:
+            score = fuzz.partial_ratio(target.upper(), item['Brand'].upper())
+            if score > 65:
+                found = True
+                st.error(f"🚨 تنبيه: تم رصد تشابه بنسبة {score}%")
+                st.write(f"**العلامة:** {item['Brand']} | **المالك:** {item['Owner']}")
+                st.caption(f"منشورة في العدد 432 - ديسمبر 2025")
+        if not found:
+            st.success("✅ لم يتم رصد تهديدات لهذه العلامة حالياً.")
+
+with tab2:
+    st.info("استخدم كاميرا الهاتف لتصوير علامة تجارية في السوق ومقارنتها بسجلات ديسمبر 2025.")
+    # هذا الزر سيفتح الكاميرا مباشرة على الأندرويد
+    cam_file = st.camera_input("التقط صورة للعلامة المشبوهة")
+    if cam_file:
+        st.warning("جاري تحليل البصمة البصرية للعلامة... (قيد التطوير)")
+
+st.divider()
+st.caption("بناءً على الأمر 03-06 المتعلق بالعلامات في الجزائر")
