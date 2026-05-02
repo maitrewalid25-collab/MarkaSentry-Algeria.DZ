@@ -4,8 +4,18 @@ from PIL import Image
 import pandas as pd
 
 # 1. إعدادات الواجهة الفاخرة
-st.set_page_config(page_title="Marka-Sentry | Visual AI", page_icon="🛡️", layout="wide")
+# --- إضافة الشعار الذهبي والاسم في أعلى الصفحة ---
+col_logo, col_text = st.columns([1, 4])
 
+with col_logo:
+    # سنستخدم أيقونة الدرع الذهبي (التي ترمز للحماية القانونية)
+    st.image("https://cdn-icons-png.flaticon.com/512/1063/1063303.png", width=100)
+
+with col_text:
+    st.markdown("""
+        <h1 style='color: #1a3a5f; margin-bottom: 0;'>Marka-Sentry Algeria</h1>
+        <p style='color: #d4af37; font-weight: bold; font-size: 1.2em;'>The Golden Standard in Brand Protection</p>
+    """, unsafe_allow_html=True)
 # تصميم CSS لدمج الجمالية مع الوظيفية
 st.markdown("""
     <style>
