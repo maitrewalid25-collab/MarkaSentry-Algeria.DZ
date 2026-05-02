@@ -1,4 +1,51 @@
 import streamlit as st
+
+# إعدادات الصفحة الفاخرة
+st.set_page_config(page_title="Marka-Sentry | Legal-Tech", page_icon="⚖️", layout="wide")
+
+# تصميم الواجهة باستخدام CSS
+st.markdown("""
+    <style>
+    /* خلفية الموقع وتنسيق الخطوط */
+    .main { background-color: #f8f9fa; }
+    h1 { color: #1a3a5f; font-family: 'serif'; font-weight: bold; }
+    
+    /* تنسيق البطاقات التعريفية */
+    .feature-card {
+        background-color: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-top: 5px solid #d4af37;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    /* تنسيق زر التحميل */
+    .stDownloadButton>button {
+        background-color: #d4af37 !important;
+        color: white !important;
+        border-radius: 8px !important;
+        font-weight: bold !important;
+        border: none !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# --- واجهة الـ Hero ---
+st.title("🛡️ Marka-Sentry Algeria")
+st.markdown("<h3 style='text-align: center; color: #555;'>الريادة في حماية الملكية الصناعية الرقمية</h3>", unsafe_allow_html=True)
+
+# عرض المميزات بشكل بطاقات (Cards)
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.markdown('<div class="feature-card"><h3>رصد آلي</h3><p>مسح شامل لنشرات INAPI فور صدورها.</p></div>', unsafe_allow_html=True)
+with col2:
+    st.markdown('<div class="feature-card"><h3>تحليل قانوني</h3><p>بناءً على الأمر 03-06 المتعلق بالعلامات.</p></div>', unsafe_allow_html=True)
+with col3:
+    st.markdown('<div class="feature-card"><h3>تقارير فورية</h3><p>توليد ملفات PDF للمعارضة في ثوانٍ.</p></div>', unsafe_allow_html=True)
+
+st.divider()import streamlit as st
 from fuzzywuzzy import fuzz
 from fpdf import FPDF
 import pandas as pd
