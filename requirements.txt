@@ -3,3 +3,6 @@ fuzzywuzzy
 python-Levenshtein
 pandas
 fpdf
+Pillow
+opencv-python-headless
+numpy
