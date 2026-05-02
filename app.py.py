@@ -10,6 +10,7 @@ col_logo, col_text = st.columns([1, 4])
 with col_logo:
     # سنستخدم أيقونة الدرع الذهبي (التي ترمز للحماية القانونية)
     st.image("https://github.com/maitrewalid25-collab/MarkaSentry-Algeria.DZ/blob/main/LOGO.png?raw=true", width=100)
+    st.image("https://github.com/maitrewalid25-collab/MarkaSentry-Algeria.DZ/blob/main/LOGO.png?raw=true", width=100)
 
 with col_text:
     st.markdown("""
