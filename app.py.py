@@ -48,7 +48,8 @@ st.markdown("""
 # --- قسم الصدارة الإعلاني ---
 st.markdown("""
     <div class="hero-section">
-        <h1>🛡️ Marka-Sentry: مع الدكتور كحول وليد نظام الرصد الميداني</h1>
+        <h1>🛡️ Marka-Sentry:
+        مع الدكتور كحول وليد نظام الرصد الميداني</h1>
         <p style="font-size: 1.2em;">دمج السرعة الميدانية مع الخبرة القانونية الجزائرية</p>
     </div>
     """, unsafe_allow_html=True)
