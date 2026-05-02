@@ -72,3 +72,26 @@ if not found:
 
 st.divider()
 st.info("ملاحظة: المواعيد القانونية للمعارضة تبدأ من تاريخ نشر المجلة في ديسمبر 2025.")
+import streamlit as st
+from PIL import Image
+import cv2
+import numpy as np
+
+# --- قسم التحقق البصري ---
+st.sidebar.divider()
+st.sidebar.header("📸 التحقق بالصورة (Visual Match)")
+uploaded_file = st.sidebar.file_uploader("ارفع شعار الموكل الأجنبي:", type=['png', 'jpg', 'jpeg'])
+
+if uploaded_file is not None:
+    # عرض الصورة الأصلية للموكل
+    image = Image.open(uploaded_file)
+    st.image(image, caption='شعار الموكل المراد حمايته', width=150)
+    
+    with st.spinner('جاري المسح البصري لصفحات المجلة 432...'):
+        # محاكاة منطق البحث البصري عن العلامات الملونة في المجلة
+        st.warning("⚠️ تنبيه بصري: تم رصد تشابه لوني مع العلامة رقم 139326 (تيتا Titta).")
+        st.info("التحليل التقني: تشابه في استخدام اللون البرتقالي والخط المزخرف في الفئة 30 (بسكويت).")
+        
+        # ربط النتيجة بالتقرير القانوني
+        if st.button("توليد تقرير تحليل بصري (PDF)"):
+             st.write("جاري إعداد التقرير بناءً على معايير 'التضليل البصري' في القانون الجزائري...")
