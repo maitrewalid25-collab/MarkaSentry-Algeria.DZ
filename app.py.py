@@ -30,8 +30,8 @@ st.markdown("""
         margin-bottom: 30px; 
     }
     .feature-card { 
-        background-color: white; 
-        padding: 20px; 
+        background-color: red; 
+        padding: 200px; 
         border-radius: 15px; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
         border-top: 5px solid #d4af37; 
