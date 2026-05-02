@@ -15,7 +15,7 @@ with col_logo:
 with col_text:
     st.markdown("""
         <h1 style='color: #1a3a5f; margin-bottom: 0;'>Marka-Sentry Algeria</h1>
-        <p style='color: #d4af37; font-weight: bold; font-size: 1.2em;'>The Golden Standard in Brand Protection</p>
+        <p style='color: #d4af37; font-weight: bold; font-size: 2.2em;'>The Golden Standard in Brand Protection</p>
     """, unsafe_allow_html=True)
 # تصميم CSS لدمج الجمالية مع الوظيفية
 st.markdown("""
@@ -23,7 +23,7 @@ st.markdown("""
     .main { background-color: #f8f9fa; }
     .hero-section { 
         text-align: center; 
-        padding: 50px; 
+        padding: 100px; 
         background: linear-gradient(135deg, #1a3a5f 0%, #2a5298 100%); 
         color: white; 
         border-radius: 20px; 
